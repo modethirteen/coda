@@ -14,12 +14,7 @@
     "incremental": false,
     "isolatedModules": true,
     "jsx": "react",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ScriptHost",
-      "ES2021",
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ScriptHost", "ES2022"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": false,
@@ -40,19 +35,10 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "ES2021",
-    "types": [
-      "node",
-    ],
-    "useDefineForClassFields": true,
+    "target": "ES2022",
+    "types": ["node"],
+    "useDefineForClassFields": true
   },
-  "include": [
-    "src",
-  ],
-  "exclude": [
-    "node_modules",
-  ],
-  "ts-node": {
-    "esm": true,
-  },
+  "include": ["packages/*/src"],
+  "exclude": ["node_modules", "dist", "rollup.config.js"]
 }

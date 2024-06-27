@@ -7,8 +7,12 @@ export default [
     output: {
       file: 'dist/index.cjs.js',
       format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
+      strict: false,
     },
     plugins: [typescript()],
+    external: ['lodash'],
   },
   {
     input: 'src/index.ts',

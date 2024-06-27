@@ -8,16 +8,16 @@ export class MemoryCache implements CacheInterface {
 
   public constructor(options: {
     logger: Logger;
-    ttl?: number;
+    ttl: number;
   }) {
-    const { logger, ttl = 3600 } = options;
+    const { logger, ttl } = options;
     this.logger = logger;
     this.ttl = ttl;   
   }
 
   public set(url: string, response: Response): void {
     this.cache.set(url, { response: response.clone(), timestamp: Date.now() });
-    this.logger.debug(`Cached Coda API response from ${url} for ${this.ttl * 1000} ms. There are ${this.cache.size} response(s) in the cache`);
+    this.logger.debug(`Cached Coda API response from ${url} for ${this.ttl} ms. There are ${this.cache.size} response(s) in the cache`);
   }
 
   public get(url: string): Response | undefined {

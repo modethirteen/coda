@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "packageManager": "yarn@4.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -At run build"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
