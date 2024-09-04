@@ -9,7 +9,13 @@ let counter = 0;
 
 export class CodaError extends Error {
   public static isCodaError(e: any): e is CodaError {
-    return isError(e) && e instanceof CodaError;
+    if (!isError(e)) {
+      return false;
+    }
+    const error = e as Error & {
+      response?: unknown;
+    };
+    return error.name === 'CodaError' && error.hasOwnProperty('response') && error.response instanceof Response;
   }
 
   public readonly response: Response;
@@ -17,6 +23,7 @@ export class CodaError extends Error {
   constructor(response: Response) {
     const { status, statusText, url } = response;
     super(`Received unsuccessful status code response from Coda API for request to ${url}: HTTP ${status} ${statusText}`);
+    this.name = 'CodaError';
     this.response = response;
   }
 };
