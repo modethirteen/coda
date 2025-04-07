@@ -1,0 +1,36 @@
+{
+  "name": "@modethirteen/coda-mkdocs",
+  "version": "0.0.1",
+  "main": "bin/index.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "watch": "tsc -w"
+  },
+  "type": "module",
+  "bin": "bin/index.js",
+  "dependencies": {
+    "@modethirteen/coda-stream": "workspace:^",
+    "chalk": "^4.1.2",
+    "lodash": "^4.17.21",
+    "remark": "^15.0.1",
+    "remark-normalize-headings": "^4.0.0",
+    "unist-util-visit": "^5.0.0",
+    "winston": "^3.13.0",
+    "yaml": "^2.5.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/lodash": "^4.14.201",
+    "@types/node": "^18.14.0",
+    "@types/unist": "^3.0.3",
+    "@types/yargs": "^17.0.33",
+    "rollup": "^2.60.2",
+    "rollup-plugin-dts": "^4.0.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "dist"
+  ]
+}

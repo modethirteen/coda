@@ -1,0 +1,14 @@
+site_name: YFR3G4AskL
+plugins:
+  - techdocs-core
+  - redirects:
+      redirect_maps:
+        index.md: f5196e5f.md
+nav:
+  - React-Router Migration Super doc:
+      - Overview: f5196e5f.md
+      - React-Router Migration Progress: 956eb372.md
+      - Directory Structure RFC:
+          - Overview: fc742587.md
+          - Directory Structure Feedback: ef43f926.md
+      - Migration Steps: 51109dd1.md
