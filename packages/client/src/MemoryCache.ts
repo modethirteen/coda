@@ -1,13 +1,13 @@
-import { Logger } from 'winston';
 import { CacheInterface } from './CacheInterface';
+import { LoggerInterface } from './LoggerInterface';
 
 export class MemoryCache implements CacheInterface {
   private readonly cache: Map<string, { response: Response; timestamp: number; }> = new Map();
-  private readonly logger: Logger;
+  private readonly logger: LoggerInterface;
   private readonly ttl: number;
 
   public constructor(options: {
-    logger: Logger;
+    logger: LoggerInterface;
     ttl: number;
   }) {
     const { logger, ttl } = options;

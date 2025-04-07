@@ -1,6 +1,6 @@
 import { isError } from 'lodash';
-import { Logger } from 'winston';
 import { CacheInterface } from './CacheInterface';
+import { LoggerInterface } from './LoggerInterface';
 
 const CODA_API_RATE_LIMIT = 60 * 1000;
 const CODA_API_PREVENT_RATE_LIMIT = 1000;
@@ -34,12 +34,12 @@ export interface CodaFetchFactoryInterface {
 
 export class CodaFetchFactory implements CodaFetchFactoryInterface {
   private readonly cache: CacheInterface;
-  private readonly logger: Logger;
+  private readonly logger: LoggerInterface;
   private readonly token: string;
 
   public constructor(options: {
     cache: CacheInterface;
-    logger: Logger;
+    logger: LoggerInterface;
     token: string;
   }) {
     const { cache, logger, token } = options;
