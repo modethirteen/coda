@@ -16,7 +16,7 @@
     "jsx": "react",
     "lib": ["DOM", "DOM.Iterable", "ScriptHost", "ES2022"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -40,5 +40,5 @@
     "useDefineForClassFields": true
   },
   "include": ["packages/*/src"],
-  "exclude": ["node_modules", "dist", "rollup.config.js"]
+  "exclude": ["node_modules", "dist"]
 }

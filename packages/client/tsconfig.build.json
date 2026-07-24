@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "Node",
+    "moduleResolution": "node10",
     "declaration": true,
     "declarationMap": false,
     "emitDeclarationOnly": false,
