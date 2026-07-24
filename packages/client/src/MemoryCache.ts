@@ -25,8 +25,11 @@ export class MemoryCache implements CacheInterface {
     if (typeof result !== 'undefined') {
       const { response, timestamp } = result;
       if (Date.now() - timestamp < this.ttl) {
-        this.logger.debug(`Using cached Coda API response from ${url}. There are ${this.cache.entries.length} response(s) in the cache`);
-        return response;
+        this.logger.debug(`Using cached Coda API response from ${url}. There are ${this.cache.size} response(s) in the cache`);
+
+        // A Response body can only be consumed once. Return a clone so the
+        // cached response stays unconsumed and remains reusable for later hits.
+        return response.clone();
       }
       this.cache.delete(url);
     }

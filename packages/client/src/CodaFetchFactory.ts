@@ -1,4 +1,3 @@
-import { isError } from 'lodash';
 import { CacheInterface } from './CacheInterface';
 import { LoggerInterface } from './LoggerInterface';
 
@@ -9,7 +8,7 @@ let counter = 0;
 
 export class CodaError extends Error {
   public static isCodaError(e: any): e is CodaError {
-    if (!isError(e)) {
+    if (!(e instanceof Error)) {
       return false;
     }
     const error = e as Error & {

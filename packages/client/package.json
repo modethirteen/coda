@@ -1,26 +1,32 @@
 {
   "name": "@modethirteen/coda-client",
-  "version": "0.0.6",
-  "main": "dist/index.cjs.js",
+  "version": "0.0.7",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "scripts": {
-    "build": "rollup --config"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "yarn build && yarn test"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/lodash": "^4.14.201",
     "@types/node": "^18.14.0",
-    "rollup": "^2.60.2",
-    "rollup-plugin-dts": "^4.0.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^2.1.9"
   },
   "files": [
     "dist"
