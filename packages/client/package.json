@@ -21,7 +21,7 @@
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepublishOnly": "yarn build && yarn test"
+    "prepack": "yarn build && yarn test"
   },
   "devDependencies": {
     "@types/node": "^18.14.0",
