@@ -71,7 +71,7 @@ describe('CodaFetchFactory', () => {
     vi.stubGlobal('fetch', fetchMock);
     const { client } = await newCodaFetch();
 
-    const promise = client('https://coda.io/apis/v1/x', {
+    const promise = client('https://docs.superhuman.com/apis/v1/x', {
       headers: { 'X-Test': '1' },
     });
     await vi.runAllTimersAsync();
@@ -79,7 +79,7 @@ describe('CodaFetchFactory', () => {
 
     expect(response.status).toBe(200);
     expect(fetchMock).toHaveBeenCalledWith(
-      'https://coda.io/apis/v1/x',
+      'https://docs.superhuman.com/apis/v1/x',
       expect.objectContaining({
         headers: {
           Authorization: 'Bearer secret-token',
@@ -149,7 +149,7 @@ describe('CodaFetchFactory', () => {
     vi.stubGlobal('fetch', fetchMock);
     const { client } = await newCodaFetch();
 
-    const captured = client('https://coda.io/x').catch(e => e);
+    const captured = client('https://docs.superhuman.com/x').catch(e => e);
     await vi.runAllTimersAsync();
     const error = await captured;
 

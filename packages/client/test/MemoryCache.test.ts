@@ -20,7 +20,7 @@ describe('MemoryCache', () => {
   it('returns undefined for an unknown url', () => {
     const cache = new MemoryCache({ logger, ttl: 1000 });
 
-    expect(cache.get('https://coda.io/unknown')).toBeUndefined();
+    expect(cache.get('https://docs.superhuman.com/unknown')).toBeUndefined();
   });
 
   it('caches a response and returns it', async () => {
